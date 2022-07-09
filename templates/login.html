@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+{% block content %}
+	<div class="content-section">
+    	<form method="POST" action="">
+    		{{ form.hidden_tag() }}
+    		<fieldset class="form-group">
+    			<legend class="border-bottom mb-4">Enter your login credential</legend>
+    			
+    			<div class="form-group">
+    				{{ form.rollnumber.label(class="form-control-label") }}
+
+                    {% if form.rollnumber.errors %}
+                        {{ form.rollnumber(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.rollnumber.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.rollnumber(class="form-control form-control-lg") }}
+                    {% endif %}
+    			</div>
+    			
+    		</fieldset>
+    		<div class ="form-group">
+    			{{ form.submit(class="btn btn-outline-info") }}
+    		</div>
+    	</form>
+    </div>
+    <div class="border-top pt-3">
+	    <small class="text-muted">
+	    	Not registered? <a class="ml-2" href="{{ url_for('register') }}">Give your train details</a>
+	    </small>
+	</div>
+{% endblock content %}

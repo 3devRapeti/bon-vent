@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class = container>
+    <p> In case if you find only your name. You need to wait for others to register for the same train. Login after sometime with your roll number </p>
+    </div>
+  <div class="content-section">
+    <table class="table table-hover">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>WhatsApp</th>
+                    <th>Roll</th>
+                  </tr>
+              </thead>
+              <tbody>
+              {% for p in tuples %}
+            {% if p.date==req_date %} 
+              {% if p.status==True %}
+                  <tr>
+                    <td>{{p.name}}</td>
+                    <td>{{p.whatsapp}}</td>
+                    <td>{{p.roll}}</td>
+                  </tr>
+                {% endif %}
+              {% endif %}
+            {% endfor %}
+            </tbody>
+          </table>
+    
+  </div>
+{% endblock content %}

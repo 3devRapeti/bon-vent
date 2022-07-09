@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+{% block content %}
+		<div class="content-section">
+			<h1>Happy Journey Initiative</h1>
+			<p> The objective of this app is to let the users connect with their co-passengers.
+				In the beginning, you have to register and from then on your Roll Number can be used to view the list of co-passengers.</p>
+
+			<p> Careful, you got to give your details only once. </p>
+		</div>
+
+		<div class="col-md-3"></div>
+		<table class = "table table-borderless">
+			<tr>
+			<td>
+				<a href="{{ url_for('register') }}"><button type="button" class="btn btn-info">Register</button></a>
+			</td>
+			<td>
+				<a href="{{ url_for('login') }}"><button type="button" class="btn btn-info">Show me the List</button></a>
+			</td>
+			</tr>
+		</table>
+	<div class="col-md-3"></div>
+{% endblock content %}
